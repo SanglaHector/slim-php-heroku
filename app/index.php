@@ -1,2 +1,2 @@
 <?php
-echo 'Mati puto';
+echo 'Ejercicios';
