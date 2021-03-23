@@ -7,6 +7,7 @@ que las calcule invocando la función pow).
 $mensaje ="";
 for($i = 1; $i < 5 ; $i ++)
 {
+    $mensaje = $mensaje."poencias de $i"."<br>";
     for($j = 1 ; $j <5 ; $j ++)
     {
         $mensaje = $mensaje.calcularPow($j,$i)."<br>";
