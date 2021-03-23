@@ -5,9 +5,9 @@ Mostrar por pantalla las primeras 4 potencias de los números del uno 1 al 4 (ha
 que las calcule invocando la función pow).
 */
 $mensaje ="";
-for($i = 1; $i ++ ; $i < 5)
+for($i = 1; $i < 5 ; $i ++)
 {
-    for($j = 1 ; $j++ ; $j < 5)
+    for($j = 1 ; $j <5 ; $j ++)
     {
         $mensaje = $mensaje.calcularPow($j,$i)."<br>";
     }
