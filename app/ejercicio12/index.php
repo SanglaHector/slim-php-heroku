@@ -4,4 +4,9 @@ Realizar el desarrollo de una función que reciba un Array de caracteres y que i
 de las letras del Array.
 Ejemplo: Se recibe la palabra “HOLA” y luego queda “ALOH”.*/
 
-echo strrev('Hola');
+$string = "hola";
+$mensaje ="";
+for ($i = strlen($string)-1; $i >= 0 ; $i--) {
+    $mensaje = $mensaje.$string[$i];
+}
+echo $mensaje;
