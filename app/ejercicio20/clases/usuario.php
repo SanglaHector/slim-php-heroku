@@ -32,7 +32,7 @@ class Usuario{
         $retorno = null;
         if(is_a($usuario,'Usuario'))
         {
-            $retorno = "$usuario->nombre,$usuario->mail,$usuario->clave";
+            $retorno = "$usuario->nombre,$usuario->mail,$usuario->clave."."\n";
         }
         return $retorno;
     }
@@ -50,8 +50,13 @@ class Usuario{
     }
     static private function toClass($registro)
     {
+        $retorno = false;
         $atributos = explode(',',$registro);
-        return new Usuario($atributos[0],$atributos[1],$atributos[2]);
+        if(isset($atributos[1]))
+        {
+            $retorno = new Usuario($atributos[0],$atributos[1],$atributos[2]);
+        }
+        return $retorno;
     }
     public static function getAll()
     {
@@ -62,7 +67,10 @@ class Usuario{
         {
             foreach ($datos as $registro) {
                 $u = Usuario::toClass($registro);
-                array_push($usuarios,$u);
+                if($u != null)
+                {
+                    array_push($usuarios,$u);
+                }
             }
         }
         return $usuarios;
